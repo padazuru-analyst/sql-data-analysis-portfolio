@@ -21,7 +21,8 @@ using MySQL.
 - GitHub — version control and portfolio hosting
 
 ## Dataset
-- Source: Kaggle — Sample Superstore Dataset
+- Source: [Kaggle — Sample Superstore Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
+- File: `sales.csv` (included in this folder)
 - 9,800 transactions
 - 793 unique customers
 - 4,922 unique orders
