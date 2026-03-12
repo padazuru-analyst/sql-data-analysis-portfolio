@@ -1,15 +1,11 @@
--- ================================================
 -- Project: Retail Sales Performance Analysis
 -- Author: padazuru-analyst
 -- Date: 2026
 -- Description: Analysis queries answering key business questions
--- ================================================
 
 USE retail_practice;
 
--- ================================================
 -- QUESTION 1: Overall Sales Performance
--- ================================================
 
 SELECT 
     COUNT(*)                    AS total_transactions,
@@ -19,9 +15,7 @@ SELECT
     MIN(amount)                 AS lowest_sale
 FROM sales;
 
--- ================================================
 -- QUESTION 2: Product and Category Performance
--- ================================================
 
 -- Revenue by category
 SELECT 
@@ -44,9 +38,7 @@ FROM sales
 GROUP BY product, category
 ORDER BY total_revenue DESC;
 
--- ================================================
 -- QUESTION 3: Customer Value Analysis
--- ================================================
 
 SELECT 
     c.name,
@@ -64,9 +56,7 @@ JOIN sales s USING(customer_id)
 GROUP BY c.name, c.city
 ORDER BY total_spent DESC;
 
--- ================================================
 -- QUESTION 4: Revenue by City
--- ================================================
 
 SELECT 
     c.city,
@@ -78,9 +68,7 @@ JOIN sales s USING(customer_id)
 GROUP BY c.city
 ORDER BY total_revenue DESC;
 
--- ================================================
 -- QUESTION 5: Customer Segmentation Summary
--- ================================================
 
 WITH customer_totals AS (
     SELECT 
@@ -104,9 +92,7 @@ FROM customer_totals
 GROUP BY segment
 ORDER BY segment_revenue DESC;
 
--- ================================================
 -- QUESTION 6: Monthly Revenue Trend
--- ================================================
 
 SELECT 
     DATE_FORMAT(sale_date, '%Y-%m')     AS month,
@@ -115,4 +101,5 @@ SELECT
     ROUND(AVG(amount), 2)               AS average_sale
 FROM sales
 GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
+
 ORDER BY month;
