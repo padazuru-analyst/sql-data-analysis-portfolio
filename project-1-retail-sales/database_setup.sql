@@ -1,9 +1,7 @@
-﻿-- ================================================
 -- Project: Retail Sales Performance Analysis
 -- Author: padazuru-analyst
 -- Date: 2026
 -- Description: Database setup for retail sales analysis
--- ================================================
 
 CREATE DATABASE IF NOT EXISTS retail_practice;
 USE retail_practice;
@@ -48,4 +46,5 @@ INSERT INTO sales VALUES
 (9,  1, 'Headphones', 'Electronics',  150.00, '2024-03-01'),
 (10, 3, 'Desk',       'Furniture',    500.00, '2024-03-05'),
 (11, 5, 'Laptop',     'Electronics', 1200.00, '2024-03-12'),
+
 (12, 2, 'Phone',      'Electronics',  800.00, '2024-03-18');
